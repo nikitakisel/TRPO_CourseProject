@@ -5,6 +5,7 @@ from PyQt5.QtGui import QPixmap
 import hashlib
 import main
 import MainWindow
+import InfoWindow
 
 
 class LoginWindow(QMainWindow):
@@ -12,8 +13,9 @@ class LoginWindow(QMainWindow):
         # You must call the super class method
         super().__init__(parent)
 
+        self.iw = None
         self.mw = None
-        self.setFixedSize(QSize(340, 290))  # Set sizes
+        self.setFixedSize(QSize(340, 320))  # Set sizes
         self.setWindowTitle('Вход')  # Set the window title
         central_widget = QWidget(self)  # Create a central widget
         self.setCentralWidget(central_widget)  # Install the central widget
@@ -44,6 +46,12 @@ class LoginWindow(QMainWindow):
 
         self.enter_button.clicked.connect(self.try_to_enter)
 
+        self.enter_button = QPushButton('О программе', self)
+        self.enter_button.move(55, 250)
+        self.enter_button.resize(230, 30)
+
+        self.enter_button.clicked.connect(self.open_info_window)
+
     def try_to_enter(self):
         login = str(int(hashlib.md5(self.login_textbox.text().encode()).hexdigest(), 16))
         password = str(int(hashlib.md5(self.password_textbox.text().encode()).hexdigest(), 16))
@@ -66,4 +74,10 @@ class LoginWindow(QMainWindow):
         else:
             self.mw = MainWindow.MainWindow(record[0][0], record[0][1])
             self.mw.show()
+            self.iw.close()
             self.close()
+
+    def open_info_window(self):
+        self.iw = InfoWindow.InfoWindow()
+        self.iw.show()
+
