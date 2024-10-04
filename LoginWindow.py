@@ -47,7 +47,7 @@ class LoginWindow(QMainWindow):
         self.enter_button.clicked.connect(self.try_to_enter)
 
         self.enter_button = QPushButton('О программе', self)
-        self.enter_button.move(55, 250)
+        self.enter_button.move(55, 255)
         self.enter_button.resize(230, 30)
 
         self.enter_button.clicked.connect(self.open_info_window)
@@ -74,10 +74,10 @@ class LoginWindow(QMainWindow):
         else:
             self.mw = MainWindow.MainWindow(record[0][0], record[0][1])
             self.mw.show()
-            self.iw.close()
+            if self.iw:
+                self.iw.close()
             self.close()
 
     def open_info_window(self):
         self.iw = InfoWindow.InfoWindow()
         self.iw.show()
-
