@@ -1,11 +1,7 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QGridLayout, QWidget, QTableWidget, \
-    QTableWidgetItem, QLineEdit, QPushButton, QLabel, QCheckBox, QMessageBox, QComboBox
-from PyQt5.QtCore import QSize, Qt
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QApplication, QMessageBox
 import sys
 import sqlite3
-import MainWindow
-import LoginWindow
+from windows import LoginWindow
 
 connection = sqlite3.connect('main_database.db')
 cursor = connection.cursor()

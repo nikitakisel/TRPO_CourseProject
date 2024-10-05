@@ -1,14 +1,15 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QGridLayout, QWidget, QTableWidget, \
-    QTableWidgetItem, QLineEdit, QPushButton, QLabel, QCheckBox, QMessageBox, QComboBox
+from PyQt5.QtWidgets import QMainWindow, QGridLayout, QWidget, QTableWidget, \
+    QTableWidgetItem, QLineEdit, QPushButton, QLabel, QCheckBox, QComboBox
 from PyQt5.QtCore import QSize, Qt
 from PyQt5.QtGui import QPixmap
-import main
-import GroupFeedBackWindow
-import EditWindow
-import RatingWindow
-import OutsidersWindow
+from windows import EditWindow, GroupFeedBackWindow
+from windows import RatingWindow
+from windows import OutsidersWindow
 import re
-import pytest
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import main
 
 
 class MainWindow(QMainWindow):
