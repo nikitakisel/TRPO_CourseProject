@@ -94,9 +94,9 @@ def test_count_activities():
 
 def test_inverse_best():
     main.cursor.execute('''
-    SELECT Count(*) FROM Students WHERE social_activities = 1
+    SELECT Count(*) FROM Students WHERE marks = '55555' AND social_activities = 1
     ''')
-    count_begin = main.cursor.fetchall()[0][0]
+    count_activities_begin = main.cursor.fetchall()[0][0]
     main.connection.commit()
 
     main.cursor.execute('''
@@ -107,12 +107,18 @@ def test_inverse_best():
     main.connection.commit()
 
     main.cursor.execute('''
-    SELECT Count(*) FROM Students WHERE social_activities = 1
+    SELECT Count(*) FROM Students WHERE marks = '55555' AND social_activities = 1
     ''')
-    count_end = main.cursor.fetchall()[0][0]
+    count_activities_end = main.cursor.fetchall()[0][0]
     main.connection.commit()
 
-    assert abs(count_end - count_begin)
+    main.cursor.execute('''
+        SELECT Count(*) FROM Students WHERE marks = '55555'
+        ''')
+    count_perfect = main.cursor.fetchall()[0][0]
+    main.connection.commit()
+
+    assert count_activities_begin + count_activities_end == count_perfect
 
 
 def test_delete_outsiders():
