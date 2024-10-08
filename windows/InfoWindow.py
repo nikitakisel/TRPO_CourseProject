@@ -40,7 +40,7 @@ class InfoWindow(QMainWindow):
         central_widget.setLayout(grid_layout)  # Set this layout in central widget
 
         self.img_label = QLabel(self)
-        icon_image = QPixmap('../img/about_us_img.png')
+        icon_image = QPixmap('img/about_us_img.png')
         self.img_label.setPixmap(icon_image)
         self.img_label.resize(280, 380)
 
