@@ -173,9 +173,9 @@ class MainWindow(QMainWindow):
 
         self.rating_button.clicked.connect(self.show_rating)
 
-        # Атрибуты "Ахалай-махалай"
+        # Атрибуты "Reverse общ деят"
 
-        self.inverse_best_button = QPushButton('Ахалай-махалай', self)
+        self.inverse_best_button = QPushButton('Смена общ деят', self)
         self.inverse_best_button.move(810, 175)
         self.inverse_best_button.resize(175, 30)
         self.inverse_best_button.clicked.connect(self.inverse_best)
