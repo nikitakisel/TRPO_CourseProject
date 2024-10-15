@@ -20,6 +20,6 @@
    ![Снимок экрана 2024-10-04 в 18 39 56](https://github.com/user-attachments/assets/0585dc4f-4f2a-43d1-a4a0-c8761b91e35a)
 
 5. Кнопка "Смена общ деят" предназначена для изменения признака общественной активности на противоположный студентам с оценками "55555"
-
-   ![Снимок экрана 2024-10-04 в 18 50 02](https://github.com/user-attachments/assets/f3139915-3b81-468c-ba29-d5af9abe9e5e)
+   
+   ![Снимок экрана 2024-10-15 в 11 56 14](https://github.com/user-attachments/assets/a014ca3b-570b-455a-a881-ad28fb6cb8c8)
 
